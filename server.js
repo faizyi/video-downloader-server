@@ -1,7 +1,6 @@
 import express from "express";
 import cors from "cors";
 import downloaderRoutes from "./src/routes/index.js";
-import ytdl from 'ytdl-core';
 
 const app = express();
 const PORT = process.env.PORT || 7001;
