@@ -9,7 +9,7 @@ const PORT = 7001;
 
 app.use(cors({
     // origin: "http://localhost:5173",
-    origin: "https://open-video-downloader.vercel.app/",
+    origin: "https://open-video-downloader.vercel.app",
     credentials: true 
 }));
 app.use(express.json());
