@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import downloaderRoutes from "./src/routes/index.js";
+// import downloaderRoutes from "./src/routes/index.js";
 
 const app = express();
 const PORT = process.env.PORT || 7001;
@@ -14,7 +14,7 @@ app.use(cors({
 }));
 app.use(express.json());
 
-app.use("/download", downloaderRoutes);
+// app.use("/download", downloaderRoutes);
 
 app.get("/", (req, res) =>{
     res.send("Server is running");
