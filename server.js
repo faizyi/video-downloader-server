@@ -3,7 +3,7 @@ import cors from "cors";
 // import downloaderRoutes from "./src/routes/index.js";
 
 const app = express();
-const PORT = process.env.PORT || 7001;
+const PORT = 7001;
 
 
 
