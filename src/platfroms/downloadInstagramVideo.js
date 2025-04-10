@@ -44,28 +44,6 @@ export const downloadInstagramVideo = async (url, res) => {
     return res.status(500).json({ error: "Video URL not found" });
   }
 
-  // Ensure the downloads folder exists
-  const downloadsDir = path.resolve("downloads");
-  if (!fs.existsSync(downloadsDir)) {
-    fs.mkdirSync(downloadsDir);
-  }
-
-  const filePath = path.resolve(downloadsDir, "instagram_video.mp4");
-  const file = fs.createWriteStream(filePath);
-
-  https.get(videoUrl, (response) => {
-    response.pipe(file);
-    file.on("finish", () => {
-      file.close(() => {
-        res.download(filePath, "instagram_video.mp4", (err) => {
-          if (err) console.error("Download error", err);
-          // Clean up: remove the downloaded file
-          fs.unlinkSync(filePath);
-        });
-      });
-    });
-  }).on("error", (err) => {
-    fs.unlinkSync(filePath); // Attempt to remove the file if created
-    res.status(500).json({ error: "Video download failed" });
-  });
+  // Redirect to the video URL for download
+  res.redirect(videoUrl);
 };
