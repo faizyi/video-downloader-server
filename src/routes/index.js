@@ -4,7 +4,7 @@ import { downloadVideo, getVideoInfo } from "../controllers/index.js";
 const router = Router();
 
 
-router.post("/", downloadVideo);
+router.get("/", downloadVideo);
 router.post("/info", getVideoInfo);
 
 
